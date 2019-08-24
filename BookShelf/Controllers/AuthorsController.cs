@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookShelf.Data;
 using BookShelf.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookShelf.Controllers
 {
+    [Authorize]
     public class AuthorsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -44,6 +46,7 @@ namespace BookShelf.Controllers
         }
 
         // GET: Authors/Create
+
         public IActionResult Create()
         {
             return View();
